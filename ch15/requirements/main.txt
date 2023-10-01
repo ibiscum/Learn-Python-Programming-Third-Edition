@@ -14,7 +14,7 @@ platformdirs==2.3.0
     # via -r main.in
 pydantic==1.8.2
     # via -r main.in
-requests==2.26.0
+requests==2.31.0
     # via -r main.in
 typing-extensions==3.10.0.2
     # via pydantic
