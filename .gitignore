@@ -11,3 +11,6 @@ write_x.txt
 data.pickle
 *.db
 .pytest_cache
+df.csv
+df.json
+df.xlsx

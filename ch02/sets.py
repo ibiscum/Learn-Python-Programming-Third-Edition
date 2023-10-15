@@ -1,12 +1,12 @@
 # sets.py
 
-
-# >>> small_primes = set()  # empty set
-# >>> small_primes.add(2)  # adding one element at a time
-# >>> small_primes.add(3)
-# >>> small_primes.add(5)
-# >>> small_primes
+small_primes = set()  # empty set
+small_primes.add(2)  # adding one element at a time
+small_primes.add(3)
+small_primes.add(5)
+print(small_primes)
 # {2, 3, 5}
+
 # >>> small_primes.add(1)  # Look what I've done, 1 is not a prime!
 # >>> small_primes
 # {1, 2, 3, 5}
