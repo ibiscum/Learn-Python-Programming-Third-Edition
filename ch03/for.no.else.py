@@ -7,6 +7,7 @@ driver = None
 for person, age in people:
     if age >= 18:
         driver = (person, age)
+        print(driver)
         break
 
 if driver is None:

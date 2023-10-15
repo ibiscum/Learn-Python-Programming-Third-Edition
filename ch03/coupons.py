@@ -4,6 +4,7 @@ customers = [
     dict(id=3, total=100, coupon_code='P50'),  # P50: percent, 50%
     dict(id=4, total=110, coupon_code='F15'),  # F15: fixed, £15
 ]
+
 for customer in customers:
     code = customer['coupon_code']
     if code == 'F20':
