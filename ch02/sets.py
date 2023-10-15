@@ -7,18 +7,22 @@ small_primes.add(5)
 print(small_primes)
 # {2, 3, 5}
 
-# >>> small_primes.add(1)  # Look what I've done, 1 is not a prime!
-# >>> small_primes
+small_primes.add(1)  # Look what I've done, 1 is not a prime!
+print(small_primes)
 # {1, 2, 3, 5}
-# >>> small_primes.remove(1)  # so let's remove it
-# >>> 3 in small_primes  # membership test
+
+small_primes.remove(1)  # so let's remove it
+print(3 in small_primes)  # membership test
 # True
-# >>> 4 in small_primes
+
+print(4 in small_primes)
 # False
-# >>> 4 not in small_primes  # negated membership test
+
+print(4 not in small_primes)  # negated membership test
 # True
-# >>> small_primes.add(3)  # trying to add 3 again
-# >>> small_primes
+
+small_primes.add(3)  # trying to add 3 again
+print(small_primes)
 # {2, 3, 5}  # no change, duplication is not allowed
 # >>> bigger_primes = set([5, 7, 11, 13])  # faster creation
 # >>> small_primes | bigger_primes  # union operator `|`
