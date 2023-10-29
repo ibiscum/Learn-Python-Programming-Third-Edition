@@ -1,5 +1,5 @@
 # files/open_try.py
-fh = open('fear.txt', 'rt')  # r: read, t: text
+fh = open("fear.txt", "rt")  # r: read, t: text
 
 for line in fh.readlines():
     print(line.strip())  # remove whitespace and print
@@ -8,7 +8,7 @@ fh.close()
 
 
 # secured by try/finally
-fh = open('fear.txt', 'rt')
+fh = open("fear.txt", "rt")
 
 try:
     for line in fh.readlines():
@@ -19,7 +19,7 @@ finally:
 
 
 # equivalent to:
-fh = open('fear.txt')  # rt is default
+fh = open("fear.txt")  # rt is default
 
 try:
     for line in fh:  # we can iterate directly on fh

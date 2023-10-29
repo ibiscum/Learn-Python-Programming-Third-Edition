@@ -56,9 +56,7 @@ def get_arg_parser():
     subcommands = parser.add_subparsers(
         title="Commands",
         dest="command",
-        description=(
-            "Use '%(prog)s COMMAND -h' to get help on a command"
-        ),
+        description=("Use '%(prog)s COMMAND -h' to get help on a command"),
     )
 
     config_parser = subcommands.add_parser(

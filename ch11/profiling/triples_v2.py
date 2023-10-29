@@ -1,4 +1,3 @@
-
 def calc_triples(mx):
     triples = []
     for a in range(1, mx + 1):
@@ -10,7 +9,7 @@ def calc_triples(mx):
 
 
 def calc_hypotenuse(a, b):
-    return (a*a + b*b) ** .5
+    return (a * a + b * b) ** 0.5
 
 
 def is_int(n):  # n is expected to be a float

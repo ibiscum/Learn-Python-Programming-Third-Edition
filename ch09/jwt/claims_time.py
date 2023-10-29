@@ -10,21 +10,19 @@ nfb = iat + timedelta(seconds=1)
 exp = iat + timedelta(seconds=3)
 
 
-data = {'payload': 'data', 'nbf': nfb, 'exp': exp, 'iat': iat}
+data = {"payload": "data", "nbf": nfb, "exp": exp, "iat": iat}
 
 
 def decode(token, secret):
     print(time())
     try:
-        print(jwt.decode(token, secret, algorithms=['HS256']))
-    except (
-        jwt.ImmatureSignatureError, jwt.ExpiredSignatureError
-    ) as err:
+        print(jwt.decode(token, secret, algorithms=["HS256"]))
+    except (jwt.ImmatureSignatureError, jwt.ExpiredSignatureError) as err:
         print(err)
         print(type(err))
 
 
-secret = 'secret-key'
+secret = "secret-key"
 token = jwt.encode(data, secret)
 
 

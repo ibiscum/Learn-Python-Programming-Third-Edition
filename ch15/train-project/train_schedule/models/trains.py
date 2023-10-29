@@ -24,9 +24,7 @@ class TrainsModelBase:
         otherwise clear the train data. Emit an `updated` event
         when the data is updated"""
         if self._station is not None:
-            self._trains = {
-                train.id: train for train in self._fetch_trains()
-            }
+            self._trains = {train.id: train for train in self._fetch_trains()}
         else:
             self._trains = {}
 

@@ -1,6 +1,5 @@
 # oop/class.methods.factory.py
 class Point:
-
     def __init__(self, x, y):
         self.x = x
         self.y = y

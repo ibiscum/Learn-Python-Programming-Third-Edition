@@ -37,17 +37,13 @@ class TrainAPIClient:
         station"""
         url = self._make_url(self.STATIONS_PATH)
 
-        url = self._make_url(
-            self.STATION_ARRIVALS_PATH, station_id=station_id
-        )
+        url = self._make_url(self.STATION_ARRIVALS_PATH, station_id=station_id)
         return TrainList.parse_obj(self._get(url))
 
     def get_departures(self, station_id):
         """Get a list of trains departing from a particular
         station"""
-        url = self._make_url(
-            self.STATION_DEPARTURES_PATH, station_id=station_id
-        )
+        url = self._make_url(self.STATION_DEPARTURES_PATH, station_id=station_id)
         return TrainList.parse_obj(self._get(url))
 
     def _make_url(self, path, **kwargs):

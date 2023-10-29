@@ -19,9 +19,7 @@ router = APIRouter(prefix="/admin")
 
 
 def ensure_admin(settings: Settings, authorization: str):
-    if not is_admin(
-        settings=settings, authorization=authorization
-    ):
+    if not is_admin(settings=settings, authorization=authorization):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=f"You must be an admin to access this endpoint.",

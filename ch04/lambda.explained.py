@@ -26,7 +26,6 @@ to_upper_lambda = lambda s: s.upper()
 
 
 if __name__ == "__main__":
-
     print(adder(3, 4))
     print(adder_lambda(3, 4))
 

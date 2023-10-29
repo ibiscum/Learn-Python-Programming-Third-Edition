@@ -1,5 +1,5 @@
 # oop/simplest.class.py
-class Simplest():  # when empty, the braces are optional
+class Simplest:  # when empty, the braces are optional
     pass
 
 

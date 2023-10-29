@@ -1,6 +1,6 @@
 # pairs.for.loop.py
 
-items = 'ABCD'
+items = "ABCD"
 pairs = []
 
 for a in range(len(items)):

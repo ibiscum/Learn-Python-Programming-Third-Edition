@@ -29,7 +29,6 @@ def new_db(filename):
 
 
 if __name__ == "__main__":
-
     new_db("train.db")
 
     Session = sessionmaker(bind=engine)
@@ -76,33 +75,19 @@ if __name__ == "__main__":
         Station(id=1, code="PAR", country="France", city="Paris"),
         Station(id=2, code="LDN", country="UK", city="London"),
         Station(id=3, code="KYV", country="Ukraine", city="Kyiv"),
-        Station(
-            id=4, code="STK", country="Sweden", city="Stockholm"
-        ),
-        Station(
-            id=5, code="WSW", country="Poland", city="Warsaw"
-        ),
-        Station(
-            id=6, code="MSK", country="Russia", city="Moskow"
-        ),
+        Station(id=4, code="STK", country="Sweden", city="Stockholm"),
+        Station(id=5, code="WSW", country="Poland", city="Warsaw"),
+        Station(id=6, code="MSK", country="Russia", city="Moskow"),
         Station(
             id=7,
             code="AMD",
             country="Netherlands",
             city="Amsterdam",
         ),
-        Station(
-            id=8, code="EDB", country="Scotland", city="Edinburgh"
-        ),
-        Station(
-            id=9, code="BDP", country="Hungary", city="Budapest"
-        ),
-        Station(
-            id=10, code="BCR", country="Romania", city="Bucharest"
-        ),
-        Station(
-            id=11, code="SFA", country="Bulgaria", city="Sofia"
-        ),
+        Station(id=8, code="EDB", country="Scotland", city="Edinburgh"),
+        Station(id=9, code="BDP", country="Hungary", city="Budapest"),
+        Station(id=10, code="BCR", country="Romania", city="Bucharest"),
+        Station(id=11, code="SFA", country="Bulgaria", city="Sofia"),
     ]
 
     session.bulk_save_objects(stations)
@@ -123,12 +108,8 @@ if __name__ == "__main__":
         station_to = choice(station_ids)
 
         name = f"{stations[station_from].city} -> {stations[station_to].city}"
-        departure = now + timedelta(
-            seconds=randint(-TEN_DAYS, TEN_DAYS)
-        )
-        arrival = departure + timedelta(
-            seconds=randint(HOUR, DAY)
-        )
+        departure = now + timedelta(seconds=randint(-TEN_DAYS, TEN_DAYS))
+        arrival = departure + timedelta(seconds=randint(HOUR, DAY))
 
         trains.append(
             Train(
@@ -156,21 +137,15 @@ if __name__ == "__main__":
 
     for ticket_id in range(NUM_TICKETS):
         price = round(
-            float(randint(MIN_PRICE, MAX_PRICE))
-            + randint(0, 1) * random(),
+            float(randint(MIN_PRICE, MAX_PRICE)) + randint(0, 1) * random(),
             2,
         )
         tickets.append(
             Ticket(
                 id=ticket_id,
-                created_at=now
-                + timedelta(seconds=randint(-TEN_DAYS, -HOUR)),
-                user_id=choice(
-                    range(len(users) - 1)
-                ),  # last user has no tickets
-                train_id=choice(
-                    range(len(trains) - 1)
-                ),  # last train has no tickets
+                created_at=now + timedelta(seconds=randint(-TEN_DAYS, -HOUR)),
+                user_id=choice(range(len(users) - 1)),  # last user has no tickets
+                train_id=choice(range(len(trains) - 1)),  # last train has no tickets
                 price=price,
                 car_class=choice(classes),
             )

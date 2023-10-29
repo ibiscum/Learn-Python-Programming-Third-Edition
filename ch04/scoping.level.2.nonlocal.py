@@ -5,12 +5,12 @@ def outer():
     def inner():
         nonlocal test
         test = 2  # nearest enclosing scope (which is 'outer')
-        print('inner:', test)
+        print("inner:", test)
 
     inner()
-    print('outer:', test)
+    print("outer:", test)
 
 
 test = 0  # global scope
 outer()
-print('global:', test)
+print("global:", test)

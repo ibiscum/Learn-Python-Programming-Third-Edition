@@ -17,8 +17,7 @@ class StationsModel:
         Request updated station data from the data source and emit
         an `updated` event when the data is updated"""
         self._stations = {
-            station.id: station
-            for station in self._datasource.get_stations()
+            station.id: station for station in self._datasource.get_stations()
         }
         self.updated.emit(stations=self._stations.values())
 

@@ -1,10 +1,9 @@
 # oop/static.methods.py
 class StringUtil:
-
     @staticmethod
     def is_palindrome(s, case_insensitive=True):
         # we allow only letters and numbers
-        s = ''.join(c for c in s if c.isalnum())  # Study this!
+        s = "".join(c for c in s if c.isalnum())  # Study this!
         # For case insensitive comparison, we lower-case s
         if case_insensitive:
             s = s.lower()
@@ -18,16 +17,18 @@ class StringUtil:
         return set(sentence.split())
 
 
-print(StringUtil.is_palindrome(
-    'Radar', case_insensitive=False))  # False: Case Sensitive
-print(StringUtil.is_palindrome('A nut for a jar of tuna'))  # True
-print(StringUtil.is_palindrome('Never Odd, Or Even!'))  # True
-print(StringUtil.is_palindrome(
-    'In Girum Imus Nocte Et Consumimur Igni')  # Latin! Show-off!
+print(
+    StringUtil.is_palindrome("Radar", case_insensitive=False)
+)  # False: Case Sensitive
+print(StringUtil.is_palindrome("A nut for a jar of tuna"))  # True
+print(StringUtil.is_palindrome("Never Odd, Or Even!"))  # True
+print(
+    StringUtil.is_palindrome(
+        "In Girum Imus Nocte Et Consumimur Igni"
+    )  # Latin! Show-off!
 )  # True
 
-print(StringUtil.get_unique_words(
-    'I love palindromes. I really really love them!'))
+print(StringUtil.get_unique_words("I love palindromes. I really really love them!"))
 # {'them!', 'palindromes.', 'I', 'really', 'love'}
 
 

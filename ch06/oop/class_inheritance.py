@@ -23,10 +23,9 @@ class Car:
 
     def start(self):
         print(
-            'Starting engine {0} for car {1}... Wroom, wroom!'
-            .format(
-                self.engine.__class__.__name__,
-                self.__class__.__name__)
+            "Starting engine {0} for car {1}... Wroom, wroom!".format(
+                self.engine.__class__.__name__, self.__class__.__name__
+            )
         )
         self.engine.start()
 

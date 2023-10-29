@@ -17,24 +17,14 @@ def get_users(db: Session, email: str = None):
 
 
 def get_user(db: Session, user_id: int):
-    return (
-        db.query(models.User)
-        .filter(models.User.id == user_id)
-        .first()
-    )
+    return db.query(models.User).filter(models.User.id == user_id).first()
 
 
 def get_user_by_email(db: Session, email: str):
-    return (
-        db.query(models.User)
-        .filter(models.User.email.ilike(email))
-        .first()
-    )
+    return db.query(models.User).filter(models.User.email.ilike(email)).first()
 
 
-def create_user(
-    db: Session, user: schemas.UserCreate, user_id: int = None
-):
+def create_user(db: Session, user: schemas.UserCreate, user_id: int = None):
     hashed_password = models.User.hash_password(user.password)
     user_dict = {
         **user.dict(exclude_unset=True),
@@ -49,21 +39,13 @@ def create_user(
     return db_user
 
 
-def update_user(
-    db: Session, user: schemas.UserUpdate, user_id: int
-):
+def update_user(db: Session, user: schemas.UserUpdate, user_id: int):
     user_dict = {
         **user.dict(exclude_unset=True),
     }
     if user.password is not None:
-        user_dict.update(
-            {"password": models.User.hash_password(user.password)}
-        )
-    stm = (
-        update(models.User)
-        .where(models.User.id == user_id)
-        .values(user_dict)
-    )
+        user_dict.update({"password": models.User.hash_password(user.password)})
+    stm = update(models.User).where(models.User.id == user_id).values(user_dict)
     result = db.execute(stm)
     db.commit()
     return result.rowcount
@@ -87,19 +69,11 @@ def get_stations(db: Session, code: str = None):
 
 
 def get_station(db: Session, station_id: int):
-    return (
-        db.query(models.Station)
-        .filter(models.Station.id == station_id)
-        .first()
-    )
+    return db.query(models.Station).filter(models.Station.id == station_id).first()
 
 
 def get_station_by_code(db: Session, code: str):
-    return (
-        db.query(models.Station)
-        .filter(models.Station.code.ilike(code))
-        .first()
-    )
+    return db.query(models.Station).filter(models.Station.code.ilike(code)).first()
 
 
 def create_station(
@@ -113,9 +87,7 @@ def create_station(
     return db_station
 
 
-def update_station(
-    db: Session, station: schemas.StationUpdate, station_id: int
-):
+def update_station(db: Session, station: schemas.StationUpdate, station_id: int):
     stm = (
         update(models.Station)
         .where(models.Station.id == station_id)
@@ -127,9 +99,7 @@ def update_station(
 
 
 def delete_station(db: Session, station_id: int):
-    stm = delete(models.Station).where(
-        models.Station.id == station_id
-    )
+    stm = delete(models.Station).where(models.Station.id == station_id)
     result = db.execute(stm)
     db.commit()
     return result.rowcount
@@ -164,19 +134,11 @@ def get_trains(
 
 
 def get_train(db: Session, train_id: int):
-    return (
-        db.query(models.Train)
-        .filter(models.Train.id == train_id)
-        .first()
-    )
+    return db.query(models.Train).filter(models.Train.id == train_id).first()
 
 
 def get_train_by_name(db: Session, name: str):
-    return (
-        db.query(models.Train)
-        .filter(models.Train.name == name)
-        .first()
-    )
+    return db.query(models.Train).filter(models.Train.name == name).first()
 
 
 def create_train(db: Session, train: schemas.TrainCreate):
@@ -203,18 +165,12 @@ def get_tickets(db: Session):
 
 
 def get_ticket(db: Session, ticket_id: int):
-    return (
-        db.query(models.Ticket)
-        .filter(models.Ticket.id == ticket_id)
-        .first()
-    )
+    return db.query(models.Ticket).filter(models.Ticket.id == ticket_id).first()
 
 
 def create_ticket(db: Session, ticket: schemas.TicketCreate):
     ticket_dict = ticket.dict(exclude_unset=True)
-    ticket_dict.update(
-        {"created_at": datetime.now(tz=timezone.utc)}
-    )
+    ticket_dict.update({"created_at": datetime.now(tz=timezone.utc)})
     db_ticket = models.Ticket(**ticket_dict)
     db.add(db_ticket)
     db.commit()
@@ -223,9 +179,7 @@ def create_ticket(db: Session, ticket: schemas.TicketCreate):
 
 
 def delete_ticket(db: Session, ticket_id: int):
-    stm = delete(models.Ticket).where(
-        models.Ticket.id == ticket_id
-    )
+    stm = delete(models.Ticket).where(models.Ticket.id == ticket_id)
     result = db.execute(stm)
     db.commit()
     return result.rowcount

@@ -26,9 +26,7 @@ router = APIRouter(prefix="/users")
 
 
 @router.get("", response_model=list[User], tags=["Users"])
-def get_users(
-    db: Session = Depends(get_db), email: Optional[str] = None
-):
+def get_users(db: Session = Depends(get_db), email: Optional[str] = None):
     return crud.get_users(db=db, email=email)
 
 
@@ -75,9 +73,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 
 
 @router.put("/{user_id}", response_model=User, tags=["Users"])
-def update_user(
-    user_id: int, user: UserUpdate, db: Session = Depends(get_db)
-):
+def update_user(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
     db_user = crud.get_user(db=db, user_id=user_id)
 
     if db_user is None:

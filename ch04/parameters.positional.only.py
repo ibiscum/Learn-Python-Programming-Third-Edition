@@ -54,7 +54,7 @@ def func_name(name, /, **kwargs):
     print(kwargs)
 
 
-func_name('Positional-only name', name='Name in **kwargs')
+func_name("Positional-only name", name="Name in **kwargs")
 """
 Prints:
 Positional-only name

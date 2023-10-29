@@ -43,9 +43,7 @@ class MainWindow:
 
     def _set_icon(self):
         """Set the window icon"""
-        self.icon = tk.PhotoImage(
-            data=load_binary_resource(ICON_FILENAME)
-        )
+        self.icon = tk.PhotoImage(data=load_binary_resource(ICON_FILENAME))
         self.root.iconphoto(True, self.icon)
 
     def _make_menus(self):
@@ -64,9 +62,7 @@ class MainWindow:
         app_menu = tk.Menu(self.menubar)
         app_menu.add_command(
             label="Refresh",
-            command=lambda: self.root.event_generate(
-                "<<RefreshData>>"
-            ),
+            command=lambda: self.root.event_generate("<<RefreshData>>"),
             underline=0,
         )
         app_menu.add_command(
@@ -74,37 +70,27 @@ class MainWindow:
             command=self.quit,
             underline=0,
         )
-        self.menubar.add_cascade(
-            menu=app_menu, label=self.title, underline=0
-        )
+        self.menubar.add_cascade(menu=app_menu, label=self.title, underline=0)
 
     def _make_edit_menu(self):
         """Create the 'Edit' menu"""
         edit_menu = tk.Menu(self.menubar)
         edit_menu.add_command(
             label="Preferences...",
-            command=lambda: self.root.event_generate(
-                "<<OpenPreferencesDialog>>"
-            ),
+            command=lambda: self.root.event_generate("<<OpenPreferencesDialog>>"),
             underline=0,
         )
-        self.menubar.add_cascade(
-            menu=edit_menu, label="Edit", underline=0
-        )
+        self.menubar.add_cascade(menu=edit_menu, label="Edit", underline=0)
 
     def _make_help_menu(self):
         """Create the 'Help' menu"""
         help_menu = tk.Menu(self.menubar)
         help_menu.add_command(
             label="About...",
-            command=lambda: self.root.event_generate(
-                "<<OpenAboutDialog>>"
-            ),
+            command=lambda: self.root.event_generate("<<OpenAboutDialog>>"),
             underline=0,
         )
-        self.menubar.add_cascade(
-            menu=help_menu, label="Help", underline=0
-        )
+        self.menubar.add_cascade(menu=help_menu, label="Help", underline=0)
 
     def _make_content(self):
         """Create the widgets to populate the body of the
@@ -113,9 +99,7 @@ class MainWindow:
         station_frame = self._make_station_chooser(content_frame)
         station_frame.grid(row=0, column=0, sticky=tk.NSEW)
 
-        notebook = ttk.Notebook(
-            content_frame, padding=(0, 5, 0, 0)
-        )
+        notebook = ttk.Notebook(content_frame, padding=(0, 5, 0, 0))
         self.arrivals_view = self._make_train_tab(
             notebook, "Arrivals", show_from=True, show_to=False
         )
@@ -136,9 +120,7 @@ class MainWindow:
             content_frame, text="Station", padding=(5, 5, 5, 5)
         )
         self.station_chooser = StationChooser(station_frame)
-        self.station_chooser.combobox.grid(
-            row=0, column=0, sticky=tk.NSEW
-        )
+        self.station_chooser.combobox.grid(row=0, column=0, sticky=tk.NSEW)
         station_frame.columnconfigure(0, weight=1)
 
         return station_frame
@@ -149,17 +131,13 @@ class MainWindow:
         frame = ttk.Frame(notebook, padding=(5, 5, 5, 5))
         notebook.add(frame, text=name)
 
-        train_view = TrainsView(
-            frame, show_from=show_from, show_to=show_to
-        )
+        train_view = TrainsView(frame, show_from=show_from, show_to=show_to)
         scrollbar = ttk.Scrollbar(
             frame,
             orient=tk.VERTICAL,
             command=train_view.treeview.yview,
         )
-        train_view.treeview.configure(
-            yscrollcommand=scrollbar.set
-        )
+        train_view.treeview.configure(yscrollcommand=scrollbar.set)
 
         train_view.treeview.grid(row=0, column=0, sticky=tk.NSEW)
         scrollbar.grid(row=0, column=1, sticky=tk.NS)

@@ -1,5 +1,6 @@
 # gen.yield.return.py
 
+
 def geometric_progression(a, q):
     k = 0
     while True:

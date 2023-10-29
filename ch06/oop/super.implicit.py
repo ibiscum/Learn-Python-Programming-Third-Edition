@@ -1,6 +1,5 @@
 # oop/super.implicit.py
 class Book:
-
     def __init__(self, title, publisher, pages):
         self.title = title
         self.publisher = publisher
@@ -8,7 +7,6 @@ class Book:
 
 
 class Ebook(Book):
-
     def __init__(self, title, publisher, pages, format_):
         super().__init__(title, publisher, pages)
         # Another way to do the same thing is:
@@ -16,8 +14,7 @@ class Ebook(Book):
         self.format_ = format_
 
 
-ebook = Ebook(
-    'Learn Python Programming', 'Packt Publishing', 500, 'PDF')
+ebook = Ebook("Learn Python Programming", "Packt Publishing", 500, "PDF")
 print(ebook.title)  # Learn Python Programming
 print(ebook.publisher)  # Packt Publishing
 print(ebook.pages)  # 500

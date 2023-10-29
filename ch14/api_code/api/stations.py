@@ -18,15 +18,11 @@ router = APIRouter(prefix="/stations")
 
 
 @router.get("", response_model=list[Station], tags=["Stations"])
-def get_stations(
-    db: Session = Depends(get_db), code: Optional[str] = None
-):
+def get_stations(db: Session = Depends(get_db), code: Optional[str] = None):
     return crud.get_stations(db=db, code=code)
 
 
-@router.get(
-    "/{station_id}", response_model=Station, tags=["Stations"]
-)
+@router.get("/{station_id}", response_model=Station, tags=["Stations"])
 def get_station(station_id: int, db: Session = Depends(get_db)):
     db_station = crud.get_station(db=db, station_id=station_id)
     if db_station is None:
@@ -42,9 +38,7 @@ def get_station(station_id: int, db: Session = Depends(get_db)):
     response_model=list[Train],
     tags=["Trains"],
 )
-def get_station_departures(
-    station_id: int, db: Session = Depends(get_db)
-):
+def get_station_departures(station_id: int, db: Session = Depends(get_db)):
     db_station = _get_station(db=db, station_id=station_id)
     return db_station.departures
 
@@ -64,9 +58,7 @@ def _get_station(db: Session, station_id: int):
     response_model=list[Train],
     tags=["Trains"],
 )
-def get_station_arrivals(
-    station_id: int, db: Session = Depends(get_db)
-):
+def get_station_arrivals(station_id: int, db: Session = Depends(get_db)):
     db_station = _get_station(db=db, station_id=station_id)
     return db_station.arrivals
 
@@ -77,12 +69,8 @@ def get_station_arrivals(
     status_code=status.HTTP_201_CREATED,
     tags=["Stations"],
 )
-def create_station(
-    station: StationCreate, db: Session = Depends(get_db)
-):
-    db_station = crud.get_station_by_code(
-        db=db, code=station.code
-    )
+def create_station(station: StationCreate, db: Session = Depends(get_db)):
+    db_station = crud.get_station_by_code(db=db, code=station.code)
     if db_station:
         raise HTTPException(
             status_code=400,
@@ -106,16 +94,12 @@ def update_station(
         )
 
     else:
-        crud.update_station(
-            db=db, station=station, station_id=station_id
-        )
+        crud.update_station(db=db, station=station, station_id=station_id)
         return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 @router.delete("/{station_id}", tags=["Stations"])
-def delete_station(
-    station_id: int, db: Session = Depends(get_db)
-):
+def delete_station(station_id: int, db: Session = Depends(get_db)):
     row_count = crud.delete_station(db=db, station_id=station_id)
     if row_count:
         return Response(status_code=status.HTTP_204_NO_CONTENT)

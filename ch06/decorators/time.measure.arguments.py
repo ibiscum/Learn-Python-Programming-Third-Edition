@@ -9,7 +9,7 @@ def f(sleep_time=0.1):
 def measure(func, *args, **kwargs):
     t = time()
     func(*args, **kwargs)
-    print(func.__name__, 'took:', time() - t)
+    print(func.__name__, "took:", time() - t)
 
 
 measure(f, sleep_time=0.3)  # f took: 0.30056095123291016

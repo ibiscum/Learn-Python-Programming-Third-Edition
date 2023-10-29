@@ -28,9 +28,7 @@ class TrainApp:
         self.api_client = TrainAPIClient(self.config)
 
         # Create models
-        self.stations_model = StationsModel(
-            datasource=self.api_client
-        )
+        self.stations_model = StationsModel(datasource=self.api_client)
         self.arrivals_model = ArrivalsModel(
             datasource=self.api_client,
         )
@@ -41,9 +39,7 @@ class TrainApp:
         # Bind callbacks to handle model events
         self.stations_model.updated.bind(self.stations_updated)
         self.arrivals_model.updated.bind(self.arrivals_updated)
-        self.departures_model.updated.bind(
-            self.departures_updated
-        )
+        self.departures_model.updated.bind(self.departures_updated)
 
         # Create the main window
         self.mainwindow = MainWindow()
@@ -58,13 +54,9 @@ class TrainApp:
         # Register callbacks to handle UI events
         self.mainwindow.bind("<Visibility>", self.main_visible)
         self.mainwindow.bind("<<OpenAboutDialog>>", self.about)
-        self.mainwindow.bind(
-            "<<OpenPreferencesDialog>>", self.configure
-        )
+        self.mainwindow.bind("<<OpenPreferencesDialog>>", self.configure)
         self.mainwindow.bind("<<RefreshData>>", self.refresh)
-        self.station_chooser.bind(
-            "<<ComboboxSelected>>", self.station_selected
-        )
+        self.station_chooser.bind("<<ComboboxSelected>>", self.station_selected)
 
     def run(self):
         self.mainwindow.run()
@@ -105,9 +97,7 @@ class TrainApp:
     def configure(self, event=None):
         """Show the configuration dialog"""
         config_dialog = ConfigDialog(self.root, self.config)
-        config_dialog.bind(
-            "<<ConfigUpdated>>", self.config_updated
-        )
+        config_dialog.bind("<<ConfigUpdated>>", self.config_updated)
         config_dialog.run()
 
     def config_updated(self, event=None):

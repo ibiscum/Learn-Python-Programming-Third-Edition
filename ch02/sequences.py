@@ -3,11 +3,11 @@ from math import pi
 
 # strings
 # 4 ways to make a string
-str1 = 'This is a string. We built it with single quotes.'
+str1 = "This is a string. We built it with single quotes."
 str2 = "This is also a string, but built with double quotes."
 
-str3 = '''This is built using triple quotes,
-so it can span multiple lines.'''
+str3 = """This is built using triple quotes,
+so it can span multiple lines."""
 
 str4 = """This too
 is a multiline one
@@ -16,23 +16,23 @@ built with triple double-quotes."""
 print(str3)  # A
 print(str4)  # B
 
-s = 'Hello There'
-print(s.removeprefix('Hell'))
-print(s.removesuffix('here'))
-print(s.removeprefix('Ooops'))
+s = "Hello There"
+print(s.removeprefix("Hell"))
+print(s.removesuffix("here"))
+print(s.removeprefix("Ooops"))
 
 # encode / decode
 s = "This is üŋíc0de"  # unicode string: code points
 print(type(s))
 
-encoded_s = s.encode('utf-8')  # utf-8 encoded version of s
+encoded_s = s.encode("utf-8")  # utf-8 encoded version of s
 print(encoded_s)
 # b'This is \xc3\xbc\xc5\x8b\xc3\xadc0de'  # result: bytes object
 
 print(type(encoded_s))  # another way to verify it
 # <class 'bytes'>
 
-decoded_s = encoded_s.decode('utf-8')  # let's revert to the original
+decoded_s = encoded_s.decode("utf-8")  # let's revert to the original
 print(decoded_s)
 # 'This is üŋíc0de'
 
@@ -68,32 +68,32 @@ print(s[:])  # quick way of making a copy
 
 
 # formatting
-greet_old = 'Hello %s!'
-print(greet_old % 'Fabrizio')
+greet_old = "Hello %s!"
+print(greet_old % "Fabrizio")
 # 'Hello Fabrizio!'
 
-greet_positional = 'Hello {}!'
-print(greet_positional.format('Fabrizio'))
+greet_positional = "Hello {}!"
+print(greet_positional.format("Fabrizio"))
 # 'Hello Fabrizio!'
 
-greet_positional = 'Hello {} {}!'
-print(greet_positional.format('Fabrizio', 'Romano'))
+greet_positional = "Hello {} {}!"
+print(greet_positional.format("Fabrizio", "Romano"))
 # 'Hello Fabrizio Romano!'
 
-greet_positional_idx = 'This is {0}! {1} loves {0}!'
-print(greet_positional_idx.format('Python', 'Heinrich'))
+greet_positional_idx = "This is {0}! {1} loves {0}!"
+print(greet_positional_idx.format("Python", "Heinrich"))
 # 'This is Python! Heinrich loves Python!'
 
-print(greet_positional_idx.format('Coffee', 'Fab'))
+print(greet_positional_idx.format("Coffee", "Fab"))
 # 'This is Coffee! Fab loves Coffee!'
 
-keyword = 'Hello, my name is {name} {last_name}'
-print(keyword.format(name='Fabrizio', last_name='Romano'))
+keyword = "Hello, my name is {name} {last_name}"
+print(keyword.format(name="Fabrizio", last_name="Romano"))
 # 'Hello, my name is Fabrizio Romano'
 
 
 # formatted string literals
-name = 'Fab'
+name = "Fab"
 age = 42
 print(f"Hello! My name is {name} and I'm {age}")
 # "Hello! My name is Fab and I'm 42"
@@ -102,8 +102,8 @@ print(f"No arguing with {pi}, it's irrational...")
 # "No arguing with 3.141592653589793, it's irrational..."
 
 # f-string debug
-user = 'heinrich'
-password = 'super-secret'
+user = "heinrich"
+password = "super-secret"
 print(f"Log in with: {user} and {password}")
 # 'Log in with: heinrich and super-secret'
 

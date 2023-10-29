@@ -40,9 +40,7 @@ class Station(Base):
     __tablename__ = "station"
 
     id = Column(Integer, primary_key=True)
-    code = Column(
-        Unicode(UNICODE_LEN), nullable=False, unique=True
-    )
+    code = Column(Unicode(UNICODE_LEN), nullable=False, unique=True)
     country = Column(Unicode(UNICODE_LEN), nullable=False)
     city = Column(Unicode(UNICODE_LEN), nullable=False)
 
@@ -69,18 +67,14 @@ class Train(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Unicode(UNICODE_LEN), nullable=False)
 
-    station_from_id = Column(
-        ForeignKey("station.id"), nullable=False
-    )
+    station_from_id = Column(ForeignKey("station.id"), nullable=False)
     station_from = relationship(
         "Station",
         foreign_keys=[station_from_id],
         back_populates="departures",
     )
 
-    station_to_id = Column(
-        ForeignKey("station.id"), nullable=False
-    )
+    station_to_id = Column(ForeignKey("station.id"), nullable=False)
     station_to = relationship(
         "Station",
         foreign_keys=[station_to_id],
@@ -108,22 +102,16 @@ class Ticket(Base):
     id = Column(Integer, primary_key=True)
     created_at = Column(DateTime(timezone=True), nullable=False)
     user_id = Column(ForeignKey("user.id"), nullable=False)
-    user = relationship(
-        "User", foreign_keys=[user_id], back_populates="tickets"
-    )
+    user = relationship("User", foreign_keys=[user_id], back_populates="tickets")
 
     train_id = Column(ForeignKey("train.id"), nullable=False)
-    train = relationship(
-        "Train", foreign_keys=[train_id], back_populates="tickets"
-    )
+    train = relationship("Train", foreign_keys=[train_id], back_populates="tickets")
 
     price = Column(Float, default=0, nullable=False)
     car_class = Column(Enum(Classes), nullable=False)
 
     def __repr__(self):
-        return (
-            f"<id={self.id} user={self.user} train={self.train}>"
-        )
+        return f"<id={self.id} user={self.user} train={self.train}>"
 
     __str__ = __repr__
 
@@ -143,12 +131,8 @@ class User(Base):
 
     def is_valid_password(self, password: str):
         """Tell if password matches the one stored in DB."""
-        salt, stored_hash = self.password.split(
-            self.pwd_separator
-        )
-        _, computed_hash = _hash(
-            password=password, salt=bytes.fromhex(salt)
-        )
+        salt, stored_hash = self.password.split(self.pwd_separator)
+        _, computed_hash = _hash(password=password, salt=bytes.fromhex(salt))
         return secrets.compare_digest(stored_hash, computed_hash)
 
     @classmethod
@@ -157,10 +141,7 @@ class User(Base):
         return f"{salt}{cls.pwd_separator}{hashed}"
 
     def __repr__(self):
-        return (
-            f"<{self.full_name}: id={self.id} "
-            f"role={self.role.name}>"
-        )
+        return f"<{self.full_name}: id={self.id} " f"role={self.role.name}>"
 
     __str__ = __repr__
 
