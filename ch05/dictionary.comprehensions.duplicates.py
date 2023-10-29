@@ -1,5 +1,5 @@
 # dictionary.comprehensions.duplicates.py
-word = 'Hello'
+word = "Hello"
 
 swaps = {c: c.swapcase() for c in word}
 

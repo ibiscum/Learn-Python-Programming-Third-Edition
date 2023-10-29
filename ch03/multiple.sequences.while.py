@@ -1,4 +1,4 @@
-people = ['Nick', 'Rick', 'Roger', 'Syd']
+people = ["Nick", "Rick", "Roger", "Syd"]
 ages = [23, 24, 23, 21]
 position = 0
 

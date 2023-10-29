@@ -1,14 +1,14 @@
 # oop/mro.simple.py
 class A:
-    label = 'a'
+    label = "a"
 
 
 class B(A):
-    label = 'b'
+    label = "b"
 
 
 class C(A):
-    label = 'c'
+    label = "c"
 
 
 class D(B, C):

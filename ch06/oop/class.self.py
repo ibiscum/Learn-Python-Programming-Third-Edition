@@ -3,7 +3,7 @@ class Square:
     side = 8
 
     def area(self):  # self is a reference to an instance
-        return self.side ** 2
+        return self.side**2
 
 
 sq = Square()

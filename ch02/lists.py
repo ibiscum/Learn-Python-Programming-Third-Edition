@@ -9,7 +9,7 @@ print([1, 2, 3])  # as with tuples, items are comma separated
 
 print([x + 5 for x in [2, 3, 4]])  # Python is magic
 print(list((1, 3, 5, 7, 9)))  # list from a tuple
-print(list('hello'))  # list from a string
+print(list("hello"))  # list from a string
 
 # main methods
 a = [1, 2, 1, 3]
@@ -45,7 +45,7 @@ a.clear()  # remove all elements from the list
 print(a)
 
 # extending
-a = list('hello')  # makes a list from a string
+a = list("hello")  # makes a list from a string
 print(a)
 
 a.append(100)  # append 100, heterogeneous type
@@ -54,7 +54,7 @@ print(a)
 a.extend((1, 2, 3))  # extend using tuple
 print(a)
 
-a.extend('...')  # extend using string
+a.extend("...")  # extend using string
 print(a)
 
 # most common operations

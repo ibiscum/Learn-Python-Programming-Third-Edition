@@ -8,23 +8,22 @@ def max_result(threshold):
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
             if result > threshold:
-                print(
-                    f'Result is too big ({result}). '
-                    f'Max allowed is {threshold}.'
-                )
+                print(f"Result is too big ({result}). " f"Max allowed is {threshold}.")
             return result
+
         return wrapper
+
     return decorator
 
 
 @max_result(75)
 def cube(n):
-    return n ** 3
+    return n**3
 
 
 @max_result(100)
 def square(n):
-    return n ** 2
+    return n**2
 
 
 @max_result(1000)

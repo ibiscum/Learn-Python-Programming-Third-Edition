@@ -9,4 +9,4 @@ elif income < 100000:
 else:
     tax_coefficient = 0.45  # 4
 
-print(f'You will pay: ${income * tax_coefficient} in taxes')
+print(f"You will pay: ${income * tax_coefficient} in taxes")

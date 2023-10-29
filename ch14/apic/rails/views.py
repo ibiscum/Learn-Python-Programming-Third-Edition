@@ -144,9 +144,7 @@ class AuthenticateResultView(generic.TemplateView):
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
         context["token"] = request.session.pop("token", None)
-        context["auth_error"] = request.session.pop(
-            "auth_error", None
-        )
+        context["auth_error"] = request.session.pop("auth_error", None)
         return self.render_to_response(context)
 
 
@@ -160,10 +158,6 @@ def prepare_trains(trains: list[dict], key: str):
 
 
 def parse_datetimes(train: dict):
-    train["arrives_at"] = datetime.fromisoformat(
-        train["arrives_at"]
-    )
-    train["departs_at"] = datetime.fromisoformat(
-        train["departs_at"]
-    )
+    train["arrives_at"] = datetime.fromisoformat(train["arrives_at"])
+    train["departs_at"] = datetime.fromisoformat(train["departs_at"])
     return train

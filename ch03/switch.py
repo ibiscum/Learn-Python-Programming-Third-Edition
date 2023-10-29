@@ -2,12 +2,11 @@
 day_number = 3
 
 if 1 <= day_number <= 5:
-    day = 'Weekday'
+    day = "Weekday"
 elif day_number == 6:
-    day = 'Saturday'
+    day = "Saturday"
 elif day_number == 0:
-    day = 'Sunday'
+    day = "Sunday"
 else:
-    day = ''
-    raise ValueError(
-        str(day_number) + ' is not a valid day number.')
+    day = ""
+    raise ValueError(str(day_number) + " is not a valid day number.")

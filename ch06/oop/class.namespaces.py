@@ -1,6 +1,6 @@
 # oop/class.namespaces.py
 class Person:
-    species = 'Human'
+    species = "Human"
 
 
 print(Person.species)  # Human
@@ -14,8 +14,8 @@ print(man.alive)  # True (inherited)
 Person.alive = False
 print(man.alive)  # False (inherited)
 
-man.name = 'Darth'
-man.surname = 'Vader'
+man.name = "Darth"
+man.surname = "Vader"
 print(man.name, man.surname)  # Darth Vader
 
 print(Person.name)

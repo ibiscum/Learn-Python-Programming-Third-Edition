@@ -4,12 +4,12 @@ def outer():
 
     def inner():
         test = 2  # inner scope
-        print('inner:', test)
+        print("inner:", test)
 
     inner()
-    print('outer:', test)
+    print("outer:", test)
 
 
 test = 0  # global scope
 outer()
-print('global:', test)
+print("global:", test)

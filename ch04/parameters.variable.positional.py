@@ -10,4 +10,4 @@ def minimum(*n):
 
 
 minimum(1, 3, -7, 9)  # n = (1, 3, -7, 9) - prints: -7
-minimum()             # n = () - prints: nothing
+minimum()  # n = () - prints: nothing

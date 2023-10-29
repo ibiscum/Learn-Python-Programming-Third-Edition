@@ -31,6 +31,7 @@ a * 2 == "HelloHello"
 def greet(first_name, last_name, age):
     return f"Greeting {first_name} {last_name} of age {age}"
 
+
 # def greet(
 #     first_name: "First name of the person we are greeting",
 #     last_name: "Last name of the person we are greeting",

@@ -1,7 +1,7 @@
 # docstrings.py
 def square(n):
     """Return the square of a number n."""
-    return n ** 2
+    return n**2
 
 
 def get_username(userid):

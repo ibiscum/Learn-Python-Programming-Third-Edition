@@ -2,10 +2,10 @@
 from pathlib import Path
 
 
-p = Path('.')
+p = Path(".")
 
-for entry in p.rglob('*'):
-    print('File:' if entry.is_file() else 'Folder:', entry)
+for entry in p.rglob("*"):
+    print("File:" if entry.is_file() else "Folder:", entry)
 
 
 """

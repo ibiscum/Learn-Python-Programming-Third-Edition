@@ -31,19 +31,13 @@ def extract_payload(token: str, key: str):
         raise InvalidToken(str(err))
 
 
-def is_admin(
-    settings: Settings, authorization: Optional[str] = None
-):
+def is_admin(settings: Settings, authorization: Optional[str] = None):
     if authorization is None:
         return False
 
-    partition_key = (
-        "Bearer" if "Bearer" in authorization else "bearer"
-    )
+    partition_key = "Bearer" if "Bearer" in authorization else "bearer"
 
-    *dontcare, token = authorization.partition(
-        f"{partition_key} "
-    )
+    *dontcare, token = authorization.partition(f"{partition_key} ")
     token = token.strip()
 
     try:

@@ -10,7 +10,8 @@ def measure(func):
     def wrapper(*args, **kwargs):
         t = time()
         func(*args, **kwargs)
-        print(func.__name__, 'took:', time() - t)
+        print(func.__name__, "took:", time() - t)
+
     return wrapper
 
 

@@ -50,22 +50,16 @@ class ConfigDialog(Dialog):
         )
         self.dialog.bind("<Return>", lambda e: ok_button.invoke())
 
-        cancel_button = ttk.Button(
-            buttonbox, text="Cancel", command=self.dismiss
-        )
+        cancel_button = ttk.Button(buttonbox, text="Cancel", command=self.dismiss)
 
-        cancel_button.grid(
-            row=0, column=0, sticky=(tk.N, tk.S, tk.E)
-        )
+        cancel_button.grid(row=0, column=0, sticky=(tk.N, tk.S, tk.E))
         ok_button.grid(row=0, column=1, sticky=tk.NSEW)
         buttonbox.columnconfigure(0, weight=1)
 
     def _make_config_vars(self):
         """Create Tk variables for all the configuration values"""
         self._config_vars = {
-            "api_url": tk.StringVar(
-                self.dialog, self.config.api_url, "api_url"
-            ),
+            "api_url": tk.StringVar(self.dialog, self.config.api_url, "api_url"),
         }
 
     def _update_config(self):

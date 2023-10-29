@@ -8,5 +8,5 @@ final_price4 = price + price * 0.2
 
 if __name__ == "__main__":
     for var, value in sorted(vars().items()):
-        if 'price' in var:
+        if "price" in var:
             print(var, value)

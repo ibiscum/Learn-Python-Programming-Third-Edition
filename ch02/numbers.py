@@ -4,17 +4,17 @@ from math import pow
 # integers
 a = 14
 b = 3
-print(a + b)   # addition
-print(a - b)   # subtraction
-print(a * b)   # multiplication
-print(a / b)   # true division
+print(a + b)  # addition
+print(a - b)  # subtraction
+print(a * b)  # multiplication
+print(a / b)  # true division
 print(a // b)  # integer division
-print(a % b)   # modulo operation (reminder of division)
-print(a ** b)  # power operation
+print(a % b)  # modulo operation (reminder of division)
+print(a**b)  # power operation
 print(pow(10, 3))
-print(10 ** 3)
+print(10**3)
 print(pow(10, -3))
-print(10 ** -3)
+print(10**-3)
 print(pow(123, 4))
 print(pow(123, 4, 100))
 # 41  # notice: 228886641 % 100 == 41

@@ -4,9 +4,9 @@ import json
 
 
 data = {
-    'big_number': 2 ** 3141,
-    'max_float': sys.float_info.max,
-    'a_list': [2, 3, 5, 7],
+    "big_number": 2**3141,
+    "max_float": sys.float_info.max,
+    "a_list": [2, 3, 5, 7],
 }
 
 
@@ -19,13 +19,13 @@ assert data == data_out  # json and back, data matches
 # let's see how passing indent affects dumps.
 
 info = {
-    'full_name': 'Sherlock Holmes',
-    'address': {
-        'street': '221B Baker St',
-        'zip': 'NW1 6XE',
-        'city': 'London',
-        'country': 'UK',
-    }
+    "full_name": "Sherlock Holmes",
+    "address": {
+        "street": "221B Baker St",
+        "zip": "NW1 6XE",
+        "city": "London",
+        "country": "UK",
+    },
 }
 
 

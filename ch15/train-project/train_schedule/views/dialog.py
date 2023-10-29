@@ -19,9 +19,7 @@ class Dialog:
     """
 
     def __init__(self, parent, title, resizable=False):
-        self.dialog = tk.Toplevel(
-            parent, class_=self.__class__.__name__
-        )
+        self.dialog = tk.Toplevel(parent, class_=self.__class__.__name__)
 
         self._title = title
         self._resizable = resizable
@@ -81,9 +79,7 @@ class Dialog:
         self.dialog.deiconify()
         self.initial_focus.focus_set()
         self.dialog.wait_visibility()
-        self.dialog.resizable(
-            width=self._resizable, height=self._resizable
-        )
+        self.dialog.resizable(width=self._resizable, height=self._resizable)
         self.dialog.grab_set()
         self.dialog.wait_window()
 

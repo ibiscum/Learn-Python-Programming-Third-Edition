@@ -1,6 +1,5 @@
 # oop/class.methods.split.py
 class StringUtil:
-
     @classmethod
     def is_palindrome(cls, s, case_insensitive=True):
         s = cls._strip_string(s)
@@ -11,7 +10,7 @@ class StringUtil:
 
     @staticmethod
     def _strip_string(s):
-        return ''.join(c for c in s if c.isalnum())
+        return "".join(c for c in s if c.isalnum())
 
     @staticmethod
     def _is_palindrome(s):
@@ -25,8 +24,8 @@ class StringUtil:
         return set(sentence.split())
 
 
-print(StringUtil.is_palindrome('A nut for a jar of tuna'))  # True
-print(StringUtil.is_palindrome('A nut for a jar of beans'))  # False
+print(StringUtil.is_palindrome("A nut for a jar of tuna"))  # True
+print(StringUtil.is_palindrome("A nut for a jar of beans"))  # False
 
 
 """

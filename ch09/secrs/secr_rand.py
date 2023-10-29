@@ -3,9 +3,9 @@ import secrets
 
 
 # utils
-print(secrets.choice('Choose one of these words'.split()))
+print(secrets.choice("Choose one of these words".split()))
 
-print(secrets.randbelow(10 ** 6))
+print(secrets.randbelow(10**6))
 
 print(secrets.randbits(32))
 
@@ -18,7 +18,7 @@ print(secrets.token_hex(32))
 print(secrets.token_urlsafe(32))
 
 # compare digests against timing attacks
-secrets.compare_digest('abc123', 'abc123')
+secrets.compare_digest("abc123", "abc123")
 
 """
 $ python secr_rand.py

@@ -22,7 +22,7 @@ class Manager:
 class ManualCacheManager:
     @property
     def client(self):
-        if not hasattr(self, '_client'):
+        if not hasattr(self, "_client"):
             self._client = Client()
         return self._client
 
@@ -41,7 +41,7 @@ class CachedPropertyManager:
 
 manager = CachedPropertyManager()
 manager.perform_query(object_id=42)
-manager.perform_query(name_ilike='%Python%')
+manager.perform_query(name_ilike="%Python%")
 
 del manager.client  # This causes a new Client on next call
 manager.perform_query(age_gte=18)

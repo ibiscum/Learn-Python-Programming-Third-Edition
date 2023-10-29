@@ -36,9 +36,7 @@ def get_trains(
 def get_train(train_id: int, db: Session = Depends(get_db)):
     db_train = crud.get_train(db=db, train_id=train_id)
     if db_train is None:
-        raise HTTPException(
-            status_code=404, detail=f"Train {train_id} not found."
-        )
+        raise HTTPException(status_code=404, detail=f"Train {train_id} not found.")
     return db_train
 
 
@@ -47,14 +45,10 @@ def get_train(train_id: int, db: Session = Depends(get_db)):
     response_model=list[Ticket],
     tags=["Tickets"],
 )
-def get_train_tickets(
-    train_id: int, db: Session = Depends(get_db)
-):
+def get_train_tickets(train_id: int, db: Session = Depends(get_db)):
     db_train = crud.get_train(db=db, train_id=train_id)
     if db_train is None:
-        raise HTTPException(
-            status_code=404, detail=f"Train {train_id} not found."
-        )
+        raise HTTPException(status_code=404, detail=f"Train {train_id} not found.")
     return db_train.tickets
 
 
@@ -64,9 +58,7 @@ def get_train_tickets(
     status_code=status.HTTP_201_CREATED,
     tags=["Trains"],
 )
-def create_train(
-    train: TrainCreate, db: Session = Depends(get_db)
-):
+def create_train(train: TrainCreate, db: Session = Depends(get_db)):
     db_train = crud.get_train_by_name(db=db, name=train.name)
     if db_train:
         raise HTTPException(

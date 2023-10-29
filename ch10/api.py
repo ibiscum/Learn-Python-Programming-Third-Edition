@@ -8,13 +8,11 @@ from marshmallow.validate import Length, Range
 
 
 class UserSchema(Schema):
-    """Represent a *valid* user. """
+    """Represent a *valid* user."""
 
     email = fields.Email(required=True)
     name = fields.Str(required=True, validate=Length(min=1))
-    age = fields.Int(
-        required=True, validate=Range(min=18, max=65)
-    )
+    age = fields.Int(required=True, validate=Range(min=18, max=65))
     role = fields.Str()
 
     @pre_load()
@@ -22,7 +20,7 @@ class UserSchema(Schema):
         data_copy = deepcopy(data)
 
         try:
-            data_copy['name'] = data_copy['name'].strip()
+            data_copy["name"] = data_copy["name"].strip()
         except (AttributeError, KeyError, TypeError):
             pass
 
@@ -46,12 +44,12 @@ def export(filename, users, overwrite=True):
 
 
 def get_valid_users(users):
-    """Yield one valid user at a time from users. """
+    """Yield one valid user at a time from users."""
     yield from filter(is_valid, users)
 
 
 def is_valid(user):
-    """Return whether or not the user is valid. """
+    """Return whether or not the user is valid."""
     return not schema.validate(user)
 
 
@@ -60,9 +58,9 @@ def write_csv(filename, users):
 
     The users are assumed to be valid for the given CSV structure.
     """
-    fieldnames = ['email', 'name', 'age', 'role']
+    fieldnames = ["email", "name", "age", "role"]
 
-    with open(filename, 'w', newline='') as csvfile:
+    with open(filename, "w", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 

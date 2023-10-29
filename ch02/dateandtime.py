@@ -3,6 +3,7 @@ from datetime import date, datetime, timedelta, timezone
 import time
 import calendar as cal
 from zoneinfo import ZoneInfo
+
 # arrow small demo
 import arrow
 
@@ -53,7 +54,7 @@ print(now.tzinfo)
 print(utcnow.tzinfo)
 
 print(now.weekday())
-f_bday = datetime(1975, 12, 29, 12, 50, tzinfo=ZoneInfo('Europe/Rome'))
+f_bday = datetime(1975, 12, 29, 12, 50, tzinfo=ZoneInfo("Europe/Rome"))
 h_bday = datetime(1981, 10, 7, 15, 30, 50, tzinfo=timezone(timedelta(hours=2)))
 diff = h_bday - f_bday
 print(diff)
@@ -66,7 +67,7 @@ print(today + timedelta(days=49))
 print(now + timedelta(weeks=7))
 
 # parsing (stdlib)
-print(datetime.fromisoformat('1977-11-24T19:30:13+01:00'))
+print(datetime.fromisoformat("1977-11-24T19:30:13+01:00"))
 print(datetime.fromtimestamp(time.time()))
 
 print(datetime.now())
@@ -74,12 +75,12 @@ print(datetime.now())
 print(arrow.utcnow())
 print(arrow.now())
 
-local = arrow.now('Europe/Rome')
+local = arrow.now("Europe/Rome")
 print(local)
 
-print(local.to('utc'))
-print(local.to('Europe/Moscow'))
-print(local.to('Asia/Tokyo'))
+print(local.to("utc"))
+print(local.to("Europe/Moscow"))
+print(local.to("Asia/Tokyo"))
 
 print(local.datetime)
 print(local.isoformat())

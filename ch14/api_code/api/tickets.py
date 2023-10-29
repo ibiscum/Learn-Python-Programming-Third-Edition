@@ -20,9 +20,7 @@ def get_tickets(db: Session = Depends(get_db)):
     return crud.get_tickets(db=db)
 
 
-@router.get(
-    "/{ticket_id}", response_model=Ticket, tags=["Tickets"]
-)
+@router.get("/{ticket_id}", response_model=Ticket, tags=["Tickets"])
 def get_ticket(ticket_id: int, db: Session = Depends(get_db)):
     db_ticket = crud.get_ticket(db=db, ticket_id=ticket_id)
     if db_ticket is None:
@@ -39,9 +37,7 @@ def get_ticket(ticket_id: int, db: Session = Depends(get_db)):
     status_code=status.HTTP_201_CREATED,
     tags=["Tickets"],
 )
-def create_ticket(
-    ticket: TicketCreate, db: Session = Depends(get_db)
-):
+def create_ticket(ticket: TicketCreate, db: Session = Depends(get_db)):
     return crud.create_ticket(db=db, ticket=ticket)
 
 

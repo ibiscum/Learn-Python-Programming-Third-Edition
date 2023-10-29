@@ -8,19 +8,19 @@ session = Session()
 
 
 # Create a couple of people
-anakin = Person(name='Anakin Skywalker', age=32)
-obi1 = Person(name='Obi-Wan Kenobi', age=40)
+anakin = Person(name="Anakin Skywalker", age=32)
+obi1 = Person(name="Obi-Wan Kenobi", age=40)
 
 # Add email addresses for both of them
 obi1.addresses = [
-    Address(email='obi1@example.com'),
-    Address(email='wanwan@example.com'),
+    Address(email="obi1@example.com"),
+    Address(email="wanwan@example.com"),
 ]
 
 # another way: we can simply append
-anakin.addresses.append(Address(email='ani@example.com'))
-anakin.addresses.append(Address(email='evil.dart@example.com'))
-anakin.addresses.append(Address(email='vader@example.com'))
+anakin.addresses.append(Address(email="ani@example.com"))
+anakin.addresses.append(Address(email="evil.dart@example.com"))
+anakin.addresses.append(Address(email="vader@example.com"))
 
 # Add people to the session. This adds addresses too.
 session.add(anakin)
@@ -29,14 +29,10 @@ session.commit()
 
 
 # Query and display both
-obi1 = session.query(Person).filter(
-    Person.name.like('Obi%')
-).first()
+obi1 = session.query(Person).filter(Person.name.like("Obi%")).first()
 print(obi1, obi1.addresses)
 
-anakin = session.query(Person).filter(
-    Person.name == 'Anakin Skywalker'
-).first()
+anakin = session.query(Person).filter(Person.name == "Anakin Skywalker").first()
 print(anakin, anakin.addresses)
 
 # capture anakin.id
@@ -52,12 +48,13 @@ def display_info():
 
     # display results
     for address in addresses:
-        print(f'{address.person.name} <{address.email}>')
+        print(f"{address.person.name} <{address.email}>")
 
     # display how many objects we have in total
-    print('people: {}, addresses: {}'.format(
-        session.query(Person).count(),
-        session.query(Address).count())
+    print(
+        "people: {}, addresses: {}".format(
+            session.query(Person).count(), session.query(Address).count()
+        )
     )
 
 

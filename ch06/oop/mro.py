@@ -1,6 +1,6 @@
 # oop/mro.py
 class A:
-    label = 'a'
+    label = "a"
 
 
 class B(A):
@@ -8,7 +8,7 @@ class B(A):
 
 
 class C(A):
-    label = 'c'
+    label = "c"
 
 
 class D(B, C):

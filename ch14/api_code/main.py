@@ -15,6 +15,4 @@ app.include_router(tickets.router)
 
 @app.get("/")
 def root():
-    return {
-        "message": f"Welcome to version {settings.api_version} of our API"
-    }
+    return {"message": f"Welcome to version {settings.api_version} of our API"}
