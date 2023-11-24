@@ -31,7 +31,7 @@ $ python class.attribute.shadowing.py
 10
 3
 Traceback (most recent call last):
-  File "/Users/fab/srv/lpp3e/v3/ch06/oop/class.attribute.shadowing.py", 
+  File "/Users/fab/srv/lpp3e/v3/ch06/oop/class.attribute.shadowing.py",
   line 20, in <module>
     print(Point.z)
 AttributeError: type object 'Point' has no attribute 'z'

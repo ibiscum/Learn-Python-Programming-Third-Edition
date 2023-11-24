@@ -2,7 +2,8 @@
 class OddEven:
     def __init__(self, data):
         self._data = data
-        self.indexes = list(range(0, len(data), 2)) + list(range(1, len(data), 2))
+        self.indexes = list(range(0, len(data), 2)) + list(range(1, len(data),
+                                                                 2))
 
     def __iter__(self):
         return self

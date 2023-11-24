@@ -8,7 +8,8 @@ def max_result(threshold):
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
             if result > threshold:
-                print(f"Result is too big ({result}). " f"Max allowed is {threshold}.")
+                print(f"Result is too big ({result}). "
+                      f"Max allowed is {threshold}.")
             return result
 
         return wrapper
