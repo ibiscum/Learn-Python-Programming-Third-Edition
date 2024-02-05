@@ -286,7 +286,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==10.0.1
+pillow==10.2.0
     # via matplotlib
 pkginfo==1.9.6
     # via twine
