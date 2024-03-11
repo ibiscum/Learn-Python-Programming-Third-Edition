@@ -295,7 +295,7 @@ platformdirs==3.10.0
     #   -r requirements.in
     #   black
     #   jupyter-core
-pluggy==1.3.0
+pluggy==1.4.0
     # via pytest
 prometheus-client==0.17.1
     # via jupyter-server
@@ -336,7 +336,7 @@ pyproject-hooks==1.0.0
     # via build
 pyrepl==0.9.0
     # via fancycompleter
-pytest==7.4.2
+pytest==8.1.1
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
