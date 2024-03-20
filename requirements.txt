@@ -37,7 +37,7 @@ beautifulsoup4==4.12.2
     # via
     #   bs4
     #   nbconvert
-black==23.9.1
+black==24.3.0
     # via -r requirements.in
 bleach==6.0.0
     # via nbconvert
@@ -75,7 +75,7 @@ decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
-django==4.2.10
+django==4.2.11
     # via -r requirements.in
 docutils==0.20.1
     # via readme-renderer
