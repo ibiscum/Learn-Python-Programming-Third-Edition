@@ -290,7 +290,7 @@ pillow==10.3.0
     # via matplotlib
 pkginfo==1.9.6
     # via twine
-platformdirs==3.10.0
+platformdirs==4.2.2
     # via
     #   -r requirements.in
     #   black
