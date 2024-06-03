@@ -345,7 +345,7 @@ python-dateutil==2.8.2
     #   jupyter-client
     #   matplotlib
     #   pandas
-python-dotenv==1.0.0
+python-dotenv==1.0.1
     # via -r requirements.in
 python-json-logger==2.0.7
     # via jupyter-events
