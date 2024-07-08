@@ -313,11 +313,11 @@ pure-eval==0.2.2
     # via stack-data
 pycparser==2.21
     # via cffi
-pydantic==2.4.2
+pydantic==2.8.2
     # via
     #   -r requirements.in
     #   fastapi
-pydantic-core==2.10.1
+pydantic-core==2.20.1
     # via pydantic
 pygments==2.16.1
     # via
