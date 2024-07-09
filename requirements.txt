@@ -482,5 +482,5 @@ widgetsnbextension==4.0.9
     # via ipywidgets
 wmctrl==0.5
     # via pdbpp
-zipp==3.17.0
+zipp==3.19.1
     # via importlib-metadata
