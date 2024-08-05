@@ -83,7 +83,7 @@ et-xmlfile==1.1.0
     # via openpyxl
 executing==2.0.0
     # via stack-data
-faker==25.2.0
+faker==26.1.0
     # via -r requirements.in
 fancycompleter==0.9.1
     # via pdbpp
