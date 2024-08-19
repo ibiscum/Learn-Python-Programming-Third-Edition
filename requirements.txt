@@ -37,7 +37,7 @@ beautifulsoup4==4.12.2
     # via
     #   bs4
     #   nbconvert
-black==24.4.2
+black==24.8.0
     # via -r requirements.in
 bleach==6.0.0
     # via nbconvert
