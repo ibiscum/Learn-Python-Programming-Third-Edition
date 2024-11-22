@@ -428,7 +428,7 @@ sqlparse==0.5.0
     # via django
 stack-data==0.6.3
     # via ipython
-starlette==0.37.2
+starlette==0.40.0
     # via fastapi
 terminado==0.17.1
     # via
@@ -436,7 +436,7 @@ terminado==0.17.1
     #   jupyter-server-terminals
 tinycss2==1.2.1
     # via nbconvert
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   ipykernel
     #   jupyter-client
