@@ -44,7 +44,7 @@ outside of the chapter folder altogether.
 
 Next step is to activate the virtual environment:
 
-    $ source  .venv/bin/activate
+    $ source .venv/bin/activate
 
 If you're on Windows, to activate your environment, you will need to run:
 
