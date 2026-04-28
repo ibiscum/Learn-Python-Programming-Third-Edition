@@ -125,14 +125,11 @@ ipykernel==6.25.2
     #   jupyter
     #   jupyter-console
     #   jupyterlab
-    #   qtconsole
 ipython==8.16.0
     # via
     #   ipykernel
     #   ipywidgets
     #   jupyter-console
-ipython-genutils==0.2.0
-    # via qtconsole
 ipywidgets==8.1.1
     # via jupyter
 isoduration==20.11.0
@@ -164,7 +161,7 @@ jsonschema[format-nongpl]==4.19.1
     #   nbformat
 jsonschema-specifications==2023.7.1
     # via jsonschema
-jupyter==1.0.0
+jupyter==1.1.1
     # via -r requirements.in
 jupyter-client==8.3.1
     # via
@@ -172,7 +169,6 @@ jupyter-client==8.3.1
     #   jupyter-console
     #   jupyter-server
     #   nbclient
-    #   qtconsole
 jupyter-console==6.6.3
     # via jupyter
 jupyter-core==5.3.2
@@ -185,7 +181,6 @@ jupyter-core==5.3.2
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   qtconsole
 jupyter-events==0.9.0
     # via jupyter-server
 jupyter-lsp==2.2.2
@@ -202,6 +197,7 @@ jupyter-server-terminals==0.4.4
 jupyterlab==4.2.5
     # via
     #   -r requirements.in
+    #   jupyter
     #   notebook
 jupyterlab-pygments==0.2.2
     # via nbconvert
@@ -280,8 +276,6 @@ packaging==23.2
     #   matplotlib
     #   nbconvert
     #   pytest
-    #   qtconsole
-    #   qtpy
 pandas==2.2.2
     # via -r requirements.in
 pandocfilters==1.5.0
@@ -335,7 +329,6 @@ pygments==2.16.1
     #   jupyter-console
     #   nbconvert
     #   pdbpp
-    #   qtconsole
     #   readme-renderer
     #   rich
 pyjwt==2.8.0
@@ -369,11 +362,6 @@ pyzmq==25.1.1
     #   jupyter-client
     #   jupyter-console
     #   jupyter-server
-    #   qtconsole
-qtconsole==5.4.4
-    # via jupyter
-qtpy==2.4.0
-    # via qtconsole
 readme-renderer==42.0
     # via twine
 referencing==0.30.2
@@ -459,7 +447,6 @@ traitlets==5.10.1
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   qtconsole
 twine==5.1.1
     # via -r requirements.in
 types-python-dateutil==2.8.19.14
