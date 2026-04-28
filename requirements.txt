@@ -37,9 +37,9 @@ beautifulsoup4==4.12.2
     # via
     #   bs4
     #   nbconvert
-black==24.8.0
+black==26.3.1
     # via -r requirements.in
-bleach==6.0.0
+bleach[css]==6.0.0
     # via nbconvert
 bs4==0.0.2
     # via -r requirements.in
@@ -50,7 +50,7 @@ certifi==2024.7.4
     #   httpcore
     #   httpx
     #   requests
-cffi==1.16.0
+cffi==2.0.0
     # via
     #   argon2-cffi-bindings
     #   cryptography
@@ -66,7 +66,7 @@ comm==0.1.4
     #   ipywidgets
 contourpy==1.1.1
     # via matplotlib
-cryptography==43.0.1
+cryptography==46.0.7
     # via
     #   -r requirements.in
     #   secretstorage
@@ -78,7 +78,7 @@ decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
-django==5.1
+django==5.1.15
     # via -r requirements.in
 docutils==0.20.1
     # via readme-renderer
@@ -94,7 +94,7 @@ fastapi==0.115.2
     # via -r requirements.in
 fastjsonschema==2.18.1
     # via nbformat
-fonttools==4.43.0
+fonttools==4.60.2
     # via matplotlib
 fqdn==1.5.1
     # via jsonschema
@@ -144,7 +144,7 @@ jeepney==0.8.0
     # via
     #   keyring
     #   secretstorage
-jinja2==3.1.3
+jinja2==3.1.6
     # via
     #   jupyter-server
     #   jupyterlab
@@ -217,7 +217,7 @@ markupsafe==2.1.3
     # via
     #   jinja2
     #   nbconvert
-marshmallow==3.25.1
+marshmallow==3.26.2
     # via -r requirements.in
 matplotlib==3.10.0
     # via -r requirements.in
@@ -235,7 +235,7 @@ mypy-extensions==1.0.0
     # via black
 nbclient==0.8.0
     # via nbconvert
-nbconvert==7.8.0
+nbconvert==7.17.1
     # via
     #   jupyter
     #   jupyter-server
@@ -282,7 +282,7 @@ pandocfilters==1.5.0
     # via nbconvert
 parso==0.8.3
     # via jedi
-pathspec==0.11.2
+pathspec==1.1.1
     # via black
 pdbpp==0.12.1
     # via -r requirements.in
@@ -290,7 +290,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==10.3.0
+pillow==12.2.0
     # via matplotlib
 pkginfo==1.9.6
     # via twine
@@ -329,6 +329,7 @@ pygments==2.16.1
     #   jupyter-console
     #   nbconvert
     #   pdbpp
+    #   pytest
     #   readme-renderer
     #   rich
 pyjwt==2.8.0
@@ -339,7 +340,7 @@ pyproject-hooks==1.0.0
     # via build
 pyrepl==0.11.4
     # via fancycompleter
-pytest==8.3.4
+pytest==9.0.3
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
@@ -348,10 +349,12 @@ python-dateutil==2.8.2
     #   jupyter-client
     #   matplotlib
     #   pandas
-python-dotenv==1.0.1
+python-dotenv==1.2.2
     # via -r requirements.in
 python-json-logger==2.0.7
     # via jupyter-events
+pytokens==0.4.1
+    # via black
 pytz==2023.3.post1
     # via pandas
 pyyaml==6.0.1
@@ -369,7 +372,7 @@ referencing==0.30.2
     #   jsonschema
     #   jsonschema-specifications
     #   jupyter-events
-requests==2.32.3
+requests==2.33.0
     # via
     #   -r requirements.in
     #   jupyterlab-server
@@ -411,7 +414,7 @@ soupsieve==2.5
     # via beautifulsoup4
 sqlalchemy==2.0.32
     # via -r requirements.in
-sqlparse==0.5.0
+sqlparse==0.5.4
     # via django
 stack-data==0.6.3
     # via ipython
@@ -421,9 +424,9 @@ terminado==0.17.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
-tinycss2==1.2.1
-    # via nbconvert
-tornado==6.4.2
+tinycss2==1.1.1
+    # via bleach
+tornado==6.5.5
     # via
     #   ipykernel
     #   jupyter-client
@@ -461,7 +464,7 @@ tzdata==2023.3
     # via pandas
 uri-template==1.3.0
     # via jsonschema
-urllib3==2.2.2
+urllib3==2.6.3
     # via
     #   requests
     #   twine
